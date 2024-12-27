@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Knewave", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.border{
+    border: solid 2px red;
+}
+.body{
+    /* background-color: black;
+    color: white; */
+    
+} 
+
+
+
+.left{
+    width: 25vw;
+    padding: 10px;
+}
+
+.right{
+    width: 75vw;
+    margin: 15px 0px;
+}
+
+
+.home ul li{
+    list-style: none;
+    width: 22px;
+    display: flex;
+    gap: 14px;
+    padding-top: 14px;
+    font-size: 22px;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+.heading{
+    
+    
+    display: flex;
+    gap: 14px;
+    padding-top: 14px;
+    align-items: center;
+    font-size: 17px;
+
+}
+
+.heading img{
+    width: 25px;
+}
+
+.footer{
+    display: flex;
+    font-size: 16px;
+    gap: 11px;
+    position: absolute;
+    bottom: 0;
+    padding: 11px;
+
+}
+
+.footer a{
+    color: grey;
+}
+
+.library{
+    min-height: 80vh;
+    position: relative;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(44, 45, 45);
+    border-radius: 9px;
+}
+
+.header *{
+    padding: 10px;
+}
+
+.signupbtn{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+
+.loginbtn{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+
+.playlists{
+    padding: 16px;
+}
+
+.cardContainer{
+    display: flex;
+    gap: 18px;
+    margin: 18px;
+}
+
+.playlists .card{
+    width: 260px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(44, 45, 45) ;
+}
+.card > *{
+    padding-top: 3px;
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.card{
+    position: relative;
+}
+
+.playlogo{
+    position: absolute;
+    top: 194px;
+    width: 77px;
+    right: 9px;
+}
