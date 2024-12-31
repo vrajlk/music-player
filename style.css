@@ -11,12 +11,6 @@
 .border{
     border: solid 2px red;
 }
-.body{
-    /* background-color: black;
-    color: white; */
-    
-} 
-
 
 
 .left{
@@ -27,6 +21,7 @@
 .right{
     width: 75vw;
     margin: 15px 0px;
+    position: relative;
 }
 
 
@@ -51,31 +46,46 @@
     padding-top: 14px;
     align-items: center;
     font-size: 17px;
-
+    
 }
 
 .heading img{
     width: 25px;
 }
 
-.footer{
-    display: flex;
-    font-size: 16px;
-    gap: 11px;
-    position: absolute;
-    bottom: 0;
-    padding: 11px;
-
-}
-
-.footer a{
-    color: grey;
-}
-
 .library{
     min-height: 80vh;
-    position: relative;
+    /* position: relative; */
 }
+
+.songslist ul{
+    padding: 0 17px;
+    padding-top: 25px;
+    font-size: 20px;
+}
+.songslist ul li{
+    list-style-type: decimal;
+    display: flex;
+    gap: 12px;
+    cursor: pointer;
+    border: solid white 1px;
+    border-radius: 5px;
+    margin: 18px 0px;
+    padding: 13px;
+    justify-content: space-between;
+
+}
+
+.songslist .songinfo{
+    width: 344px;
+}
+
+.songslist{
+    overflow: auto;
+    height: 900px;
+    margin: 45px 0;
+}
+
 
 .header{
     display: flex;
@@ -92,14 +102,28 @@
     background-color: rgb(255, 255, 255);
     border: none;
     outline: none;
-    border-radius: 50px;
+    border-radius: 28px;
+    padding: 12px 20px;
+    margin-right: 25px;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button :hover{
+    transform: scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    font-weight: 550;
 }
 
 .loginbtn{
     background-color: rgb(255, 255, 255);
     border: none;
     outline: none;
-    border-radius: 50px;
+    border-radius: 28px;
+    padding: 12px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .playlists{
@@ -128,11 +152,134 @@
 
 .card{
     position: relative;
+    transition: transform 0.3s ease;
 }
+
+.card:hover {
+    transform: scale(1.05); 
+  }
 
 .playlogo{
     position: absolute;
     top: 194px;
     width: 77px;
     right: 9px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    
 }
+
+.card :hover{
+    opacity: 1;
+}
+
+.play_pause{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play_pause span{
+    font-size: 20px;
+    width: 100px;
+    padding: 12px;
+    
+}
+
+.play_pause img{
+    width: 43px;
+}
+
+.musiclogo{
+    width: 43px;
+}
+
+/* playbaratnavbarcssstartsfromhere */
+
+
+.media-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.media-controls {
+    position: absolute;
+    bottom: 20px;
+    background: #2c2d2d;
+    border: 1px solid #d8dddd;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 52vw;
+    transform: translateY(10px);
+}
+
+.media-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.media-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    color: #555;
+}
+
+.media-button i {
+    font-size: 24px;
+    padding: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 15px;
+    background: #ffe5b4;
+    color: #333;
+}
+
+.play-button i {
+    background: linear-gradient(to bottom left, #fff, #fdf6d3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.media-progress {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.progress-bar-wrapper {
+    flex: 1;
+    height: 8px;
+    background: #ffe5b4;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    width: 44%;
+    height: 100%;
+    background: linear-gradient(to right, #ffd700, #ffa500);
+}
+
+.progress-time {
+    font-size: 12px;
+    color: #555;
+}
+
+/* playbaratnavbarcsssendshere */
