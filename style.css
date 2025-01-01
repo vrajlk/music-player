@@ -443,6 +443,10 @@
 
 .songName{
     align-content: center;
+    position: absolute;
+    left: 23px;
+    top: 48px;
+    font-size: 20px;
 }
 
 /* .media-buttons{
