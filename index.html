@@ -84,35 +84,55 @@
         
 
   <div class="media-container">
+
+  
       <div class="media-controls">
-          <div class="media-buttons">
+
+       
+        <div class="media-buttons">
+          <div class="songName">songname</div>
               <button class="media-button rewind-button">
                   <i class="backward">
-                    <img src="images/logos/backward.svg" alt="playing last song">
+                    <img id="lasttrack" src="images/logos/backward.svg" alt="playing last song">
                   </i>
                   <span>Rewind</span>
               </button>
               <button class="media-button play-button">
                   <i class="play">
-                    <img src="images/logos/play_pause.svg" alt="playing and pausing">
+                    <img id="currenttrack" src="images/logos/play_pause.svg" alt="playing and pausing">
                   </i>
                   <span>Play</span>
               </button>
               <button class="media-button fast-forward-button">
                   <i class="forward">
-                    <img src="images/logos/forward.svg" alt="playing next song">
+                    <img id="nexttrack" src="images/logos/forward.svg" alt="playing next song">
                   </i>
                   <span>Forward</span>
               </button>
-
-          </div>
-          <div class="media-progress">
-              <div class="progress-time">15:23</div>
-              <div class="progress-bar-wrapper">
+              <div class="songDuration">00:00</div>
+            </div>
+          
+          <!-- seekbarorginal -->
+          
+          <!-- <div class="media-progress">
+            <div class="progress-time">15:23</div>
+            <div class="progress-bar-wrapper">
                   <div class="progress-bar"></div>
               </div>
               <div class="progress-time">34:40</div>
           </div>
+           -->
+          <!-- seekbarorginal -->
+
+          <!-- seekbartest -->
+
+          <div class="slidecontainer-two">
+            <input type="range" min="1" max="100" value="1" class="slider-two" id="range-two">
+            <div id="completionBar-two"></div>
+          </div>
+            
+
+          <!-- seekbartest -->
       </div>
   </div>
             <!-- playbar end -->
