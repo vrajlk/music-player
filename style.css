@@ -59,7 +59,7 @@
 }
 
 .songslist ul{
-    padding: 0 17px;
+    /* padding: 0 17px; */
     padding-top: 25px;
     font-size: 20px;
 }
@@ -182,8 +182,8 @@
 
 .play_pause span{
     font-size: 20px;
-    width: 100px;
-    padding: 12px;
+    width: 107px;
+    padding: 4px;
     
 }
 
@@ -283,3 +283,92 @@
 }
 
 /* playbaratnavbarcsssendshere */
+
+
+/* play_pause,backward,forwardcssstartsfromhere */
+
+/* play_pausebtncss */
+
+.play_pause img{
+    /* background: linear-gradient(145deg, #1e1e1e, #292929); */
+    border: 2px solid #444;
+    /* color: #fff; */
+    font-size: 16px;
+    font-weight: bold;
+    /* padding: 10px 15px; */
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px #141414, -4px -4px 8px #383838;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+.play_pause img:hover {
+    /* background: linear-gradient(145deg, #292929, #1e1e1e); */
+    box-shadow: 0 0 10px 4px #0041c4, 0 0 15px 6px #0041c4;
+    color: #4bff3b;
+  }
+/* play_pausebtncss ends */
+
+
+/* playbarcss */
+
+.media-controls {
+    background: linear-gradient(145deg, #1e1e1e, #292929);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 4px 4px 8px #141414, -4px -4px 8px #383838;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .media-controls:hover {
+    box-shadow: 0 0 15px 6px rgba(255, 235, 59, 0.3);
+  }
+
+/* playbarcssends */
+
+
+/* playbarcontrolscss */
+
+.media-button{
+    background: #1e1e1e;
+    border: 2px solid #444;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 23%;
+    margin: 0 5px;
+    box-shadow: 2px 2px 4px #141414, -2px -2px 4px #383838;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .media-button:hover {
+    background: #292929;
+    box-shadow: 0 0 10px 4px #ffeb3b, 0 0 15px 6px rgba(255, 235, 59, 0.5);
+    color: #ffeb3b;
+  }
+  
+  /* Playbar Progress Bar */
+  .media-progress {
+    flex-grow: 1;
+    height: 8px;
+    margin: 0 10px;
+    background: #444;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .media-progress{
+    height: 100%;
+    width: 50%; /* Adjust as needed */
+    background: linear-gradient(90deg, #ffeb3b, #ffa500);
+    transition: width 0.3s ease-in-out;
+  }
+
+/* play_pause,backward,forwardcssendshere */
+ 
