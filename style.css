@@ -439,6 +439,11 @@
 
 .songDuration{
     align-content: center;
+    align-content: center;
+    position: absolute;
+    right: 23px;
+    top: 48px;
+    font-size: 20px;
 }
 
 .songName{
