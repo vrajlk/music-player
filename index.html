@@ -10,6 +10,9 @@
   <body>
     <div class="container flex bg-black">
       <div class="left">
+        <div class="close">
+          <img class="invert leftclose" src="images/logos/close.svg" alt="for closing the left menu">
+        </div>
         <div class="home bg-grey rounded margin-1 padding-1">
           <div class="logo">
             <img class="invert" src="images/logos/logo.svg" alt="logo" />
@@ -44,6 +47,9 @@
       <div class="right bg-grey rounded ">
         <div class="header">
             <div class="nav">
+              <div class="responsiveleftmenu">
+                <img class="invert leftmenu" src="images/logos/leftmenu.svg" alt="">
+              
                 <svg class="invert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
                     <circle cx="3" cy="3" r="3" transform="matrix(-1 0 0 1 22 9)" stroke="currentColor" stroke-width="1.5" />
                     <path d="M2 11.9999H12M2 11.9999C2 12.5619 2.4381 12.9891 3.3143 13.8436L4.97057 15.5M2 11.9999C2 11.4378 2.4381 11.0106 3.3143 10.1561L4.97044 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -52,6 +58,7 @@
                     <circle cx="5" cy="12" r="3" stroke="currentColor" stroke-width="1.5" />
                     <path d="M22 12L12 12M22 12C22 12.562 21.5619 12.9893 20.6857 13.8437L19.0294 15.5001M22 12C22 11.4379 21.5619 11.0107 20.6857 10.1563L19.0296 8.50012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
+                </div>
             </div>
             <div class="button">
                 <button class="signupbtn">Sign up</button>
@@ -109,6 +116,13 @@
                   </i>
                   <span>Forward</span>
               </button>
+              <div class="volume-container">
+                <div class="volume-button">
+                  <img src="images/logos/volume.svg" alt="Volume" class="volume-icon">
+                  <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
+                </div>
+              </div>
+              
               <div class="songDuration"></div>
             </div>
           
