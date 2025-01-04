@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 
+
 *{
     margin: 0px;
     padding: 0px;
@@ -12,16 +13,26 @@
     border: solid 2px red;
 }
 
+.container {
+    display: flex; /* Use flexbox for layout */
+    height: 100vh; /* Full height for independent scrolling */
+    overflow: hidden; /* Prevent container from scrolling */
+}
+
 
 .left{
     width: 25vw;
     padding: 10px;
+    overflow-y: auto; /* Enable vertical scrolling for the left panel */
+    height: 100%; /* Ensure it takes the full height of the container */
 }
 
 .right{
     width: 75vw;
     margin: 15px 0px;
     position: relative;
+    overflow-y: auto; /* Enable vertical scrolling for the right panel */
+    height: 100%; /* Ensure it takes the full height of the container */
 }
 
 
@@ -195,6 +206,10 @@
     width: 43px;
 }
 
+.songinfo div{
+    word-break: break-all;
+}
+
 /* playbaratnavbarcssstartsfromhere */
 
 
@@ -217,7 +232,7 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    width: 52vw;
+    width: 65vw;
     transform: translateY(10px);
 }
 
@@ -454,7 +469,149 @@
     font-size: 20px;
 }
 
-/* .media-buttons{
+.responsiveleftmenu{
     display: flex;
-    justify-content: flex-end;
-} */
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.leftmenu{
+    display: none;
+}
+
+.leftclose{
+    display: none;
+}
+
+
+@media (max-width: 1400px) {
+
+    .container{
+        height: 103vh;
+        overflow: hidden;
+    }
+
+    .left{
+        background-color: black;
+        position: absolute;
+        left: -120%;
+        transition: all 0.3s ease-in-out;
+        z-index: 2;
+        width: 408px;
+        padding: 0;
+    }
+
+    .media-controls{
+        width: 85vw;
+    }
+
+    .right{
+        width: 100vw;
+        position: relative;
+        overflow-y: auto; /* Enable vertical scrolling for the right panel */
+        height: 100%; /* Ensure it takes the full height of the container */
+        margin: 0;
+    }
+
+    .leftmenu{
+        display: block;
+    }
+
+    .leftclose{
+        display: block;
+        width: 31px;
+        position: absolute;
+        left: 370px;
+        top: 29px;
+    }
+
+    .media-controls{
+        width: 79vw;
+        height: 162px;
+    }
+    
+    .songName{
+        position: absolute;
+        top: 113px;
+        left: 19px;
+        font-size: 14px;
+    }
+
+    .songDuration{
+        position: absolute;
+        bottom: -9px;
+        right: 20px;
+        font-size: 14px;
+    }
+}
+
+/* volumebuttoncss */
+
+/* Scoped styles for the volume component */
+.volume-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+/* Volume button */
+.volume-container .volume-button {
+    position: absolute;
+    left: 80px;
+    bottom: 45px;
+    width: 35px; /* Adjusted size for mobile */
+    height: 35px;
+    background: linear-gradient(145deg, #f8d347, #ffd847);
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(255, 209, 72, 0.6), inset -4px -4px 10px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Glow effect and 3D hover effect */
+.volume-container .volume-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(255, 209, 72, 0.8), inset -6px -6px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Volume icon */
+.volume-container .volume-icon {
+    width: 18px; /* Adjusted size for mobile */
+    height: 18px;
+    filter: invert(88%) sepia(74%) saturate(597%) hue-rotate(0deg) brightness(102%) contrast(101%);
+}
+
+/* Volume slider (hidden by default) */
+.volume-container .volume-slider {
+    position: absolute;
+    bottom: -40px; /* Reduced gap for mobile */
+    left: 60%;
+    transform: translateX(-50%);
+    width: 80px; /* Adjusted width for mobile */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show slider on hover for non-mobile devices */
+@media (hover: hover) and (pointer: fine) {
+    .volume-container:hover .volume-slider {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 780px) {
+    .volume-container {
+        display: none;
+    }
+
+}
+
+
+/* volume button css ends here */

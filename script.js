@@ -1,10 +1,10 @@
 console.log("Hey, it's Spotify cloned but userly modified!");
-
+let songs;
 let currentSong = new Audio();
 // time converting function from seconds to minutes
 function timeconverter(seconds) {
   if (isNaN(seconds) || seconds < 0) {
-    return "invalid time input";
+    return "00:00";
   }
   const minutes = Math.floor(seconds / 60)
   const remainingSeconds = Math.floor(seconds % 60)
@@ -57,7 +57,7 @@ async function main() {
 
 
 
-  let songs = await getData();
+  songs = await getData();
   console.log("Fetched songs:", songs);
 
   // displaying all the songs fetched from the local directory in the form of list
@@ -124,6 +124,94 @@ async function main() {
 
     }
   });
+
+  // event listner for opening left menu
+  
+  document.querySelector(".leftmenu").addEventListener("click",() => {
+    document.querySelector(".left").style.left = "0"
+  }
+  )
+   // event listner for closing left menu 
+
+  document.querySelector(".leftclose").addEventListener("click",() => {
+    document.querySelector(".left").style.left = "-120%"
+  }
+  )
+
+ // Event listener for the forward button
+document.querySelector(".forward").addEventListener("click", () => {
+  console.log("Forward is clicked");
+
+  // Decode current song name to handle %20
+  let currentSongName = decodeURIComponent(currentSong.src.split("/").pop()); 
+
+  // Find the index of the current song
+  let index = songs.findIndex(song => decodeURIComponent(song.split("/").pop()) === currentSongName);
+
+  if (index === -1) {
+      console.log("Current song not found in the songs array.");
+      return;
+  }
+
+  if ((index + 1) < songs.length) { // Check if the next song exists
+      PlayMusic(decodeURIComponent(songs[index + 1].split("/").pop())); // Play the next song
+  } else {
+      console.log("No more songs to play.");
+  }
+
+  console.log("Current Song URL:", decodeURIComponent(currentSong.src));
+  console.log("Current Song Index:", index);
+});
+
+
+
+ // Event listener for the backward button
+document.querySelector(".backward").addEventListener("click", () => {
+  console.log("Backward is clicked");
+
+  // Decode current song name to handle %20
+  let currentSongName = decodeURIComponent(currentSong.src.split("/").pop()); 
+
+  // Find the index of the current song
+  let index = songs.findIndex(song => decodeURIComponent(song.split("/").pop()) === currentSongName);
+
+  if (index === -1) {
+      console.log("Current song not found in the songs array.");
+      return;
+  }
+
+  if ((index - 1) >= 0) { // Check if the previous song exists
+      PlayMusic(decodeURIComponent(songs[index - 1].split("/").pop())); // Play the previous song
+  } else {
+      console.log("No previous songs to play.");
+  }
+
+  console.log("Current Song URL:", decodeURIComponent(currentSong.src));
+  console.log("Current Song Index:", index);
+});
+
+const volumeSlider = document.querySelector(".volume-slider");
+const audioElement = currentSong; // Assuming you're using the `currentSong` Audio element
+
+volumeSlider.addEventListener("input", (e) => {
+    const volume = e.target.value; // Get the slider value
+    audioElement.volume = volume; // Set the audio volume
+    console.log("Volume set to:", volume);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const volumeButton = document.querySelector(".volume-button");
+  const volumeSlider = document.querySelector(".volume-slider");
+
+  // Toggle the visibility of the slider on mobile
+  volumeButton.addEventListener("click", () => {
+      if (window.innerWidth <= 768) { // For mobile and tablet
+          const isVisible = volumeSlider.style.visibility === "visible";
+          volumeSlider.style.visibility = isVisible ? "hidden" : "visible";
+          volumeSlider.style.opacity = isVisible ? "0" : "1";
+      }
+  });
+});
 
 
 
