@@ -181,6 +181,31 @@
     
 }
 
+#play1{
+    position: absolute;
+    top:30px;
+}
+
+#play2{
+    position: absolute;
+    top: 166px;
+}
+
+#play3{
+    position: absolute;
+    top: 168px;
+}
+
+#play4{
+    position: absolute;
+    top: 110px;
+}
+
+#play5{
+    position: absolute;
+    top: 41px;
+}
+
 .card :hover{
     opacity: 1;
 }
@@ -269,39 +294,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* seekbarorginalcss */
-
-
-/* .media-progress {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    
-}
-
-.progress-bar-wrapper {
-    flex: 1;
-    height: 8px;
-    background: #ffe5b4;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-}
-
-.progress-bar {
-    width: 44%;
-    height: 100%;
-    background: linear-gradient(to right, #ffd700, #ffa500);
-}
-
-.progress-time {
-    font-size: 12px;
-    color: #555;
-} */
-
-/* seekbarorginalcss */
 
 /* seekbartestcss */
 
@@ -543,6 +535,21 @@
         bottom: -9px;
         right: 20px;
         font-size: 14px;
+    }
+
+    .cardContainer{
+        display: flex;
+        gap:34px;
+        margin:34px;
+        flex-wrap: wrap;
+    }
+
+    .playlists .card{
+        width: 127px;
+    }
+
+    .playlogo{
+        display: none;
     }
 }
 
