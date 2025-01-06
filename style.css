@@ -13,6 +13,10 @@
     border: solid 2px red;
 }
 
+.logo img{
+    width: 66px;
+}
+
 .container {
     display: flex; /* Use flexbox for layout */
     height: 100vh; /* Full height for independent scrolling */
