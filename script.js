@@ -32,7 +32,8 @@ async function getData(folder) {
     const element = as[index];
     if (element.href.endsWith(".mp3")) {
       // Correct the URL by adding 'songs/' after 'spotify clone/'
-      let correctedPath = `/songs/${folder}/${element.href.split('/').pop()}`;
+      let correctedPath = `/songs/${encodeURIComponent(folder)}/${encodeURIComponent(element.href.split('/').pop())}`;
+
       console.log(correctedPath);
 
       songs.push(correctedPath); // Add the corrected URL to the songs array
