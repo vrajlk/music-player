@@ -26,7 +26,7 @@ async function getData(folder) {
   let div = document.createElement("div");
   div.innerHTML = response;
   let as = div.getElementsByTagName("a");
-  let = songs = [];
+  let songs = [];
 
   for (let index = 0; index < as.length; index++) {
     const element = as[index];
