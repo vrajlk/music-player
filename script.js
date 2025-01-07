@@ -82,7 +82,8 @@ async function getData(folder) {
 
 const PlayMusic = (track) => {
   //   let audio = new Audio( "/spotify%20clone/songs/" + track)
-  currentSong.src = `/spotify%20clone/songs/${currfolder}/` + track
+  currentSong.src = `/songs/${currfolder}/${track}`;
+
 
 
   currentSong.play()
