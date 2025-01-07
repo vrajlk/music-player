@@ -21,10 +21,27 @@ function timeconverter(seconds) {
 
 async function getData(folder) {
   currfolder = folder;
-  let a = await fetch(`https://verseline.onrender.com/songs/${folder}/`);
+
+   // Log to check if fetch is being triggered and check the folder being used
+   console.log("Fetching songs from folder:", folder);
+
+
+  let a = await fetch(`/songs/${folder}/`);
+
+   // Check if fetch is successful and log the response
+   if (!a.ok) {
+    console.error("Failed to fetch folder:", folder);
+    return;
+  }
+
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
+
+   // Check response
+   console.log("Received response:", response);
+
+
   let as = div.getElementsByTagName("a");
   let songs = [];
 
@@ -33,7 +50,10 @@ async function getData(folder) {
     if (element.href.endsWith(".mp3")) {
       // Correct the URL by adding 'songs/' after 'spotify clone/'
       let correctedPath = `/songs/${folder}/${element.href.split('/').pop()}`;
-      console.log(correctedPath);
+
+
+   console.log("Corrected Path:", correctedPath); // Log the corrected path
+
 
       songs.push(correctedPath); // Add the corrected URL to the songs array
      
@@ -65,6 +85,10 @@ async function getData(folder) {
         
          </li>`;
   }
+
+    // Log the songs array
+    console.log("Songs array:", songs);
+
   // library songs only name displaying and removing space
 
   Array.from(document.querySelector(".songslist").getElementsByTagName("li")).forEach(e => {
