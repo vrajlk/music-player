@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors'); // Add CORS
 const app = express();
+
+// Enable CORS for all domains (you can restrict it later for specific domains)
+app.use(cors());
 
 // Serve static files (HTML, CSS, JS, images, songs)
 app.use(express.static(path.join(__dirname, '/')));
-app.use('/songs', express.static(path.resolve(__dirname, 'songs')));
+app.use('/songs', express.static(path.join(__dirname, 'songs')));
 
 
 app.use((req, res, next) => {
