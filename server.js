@@ -4,8 +4,14 @@ const app = express();
 
 // Serve static files (HTML, CSS, JS, images, songs)
 app.use(express.static(path.join(__dirname, '/')));
-app.use('/songs', express.static(path.join(__dirname, 'songs')));
+app.use('/songs', express.static(path.resolve(__dirname, 'songs')));
 
+
+app.use((req, res, next) => {
+    console.log(`Request URL: ${req.url}`);
+    next();
+  });
+  
 
 // Serve the main HTML file
 app.get('/', (req, res) => {
