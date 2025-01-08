@@ -122,6 +122,7 @@
     margin-right: 25px;
     font-size: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100px;
 }
 
 .button :hover{
@@ -139,6 +140,7 @@
     margin-right: 10px;
     font-size: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100px;
 }
 
 .playlists{
@@ -555,6 +557,8 @@
     .playlogo{
         display: none;
     }
+
+
 }
 
 /* volumebuttoncss */
@@ -621,6 +625,34 @@
     .volume-container {
         display: none;
     }
+
+}
+/* for iphone 13 6.6inch display */
+@media (max-width: 444px) {
+    .leftclose {
+        left: 321px;
+      }
+
+      .signupbtn{
+        width: 76px;
+        margin-top: 10px;
+        font-size: 10px;
+        border-radius: 28px;
+        padding: 12px 20px;
+        margin-right: 25px;
+      }
+
+      .loginbtn{
+        width: 72px;
+        font-size: 11px;
+        border-radius: 28px;
+        padding: 12px 20px;
+        margin-right: 10px;
+      }
+
+      .left{
+        width: 375px;
+      }
 
 }
 

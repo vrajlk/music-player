@@ -17,6 +17,27 @@ function timeconverter(seconds) {
   return `${formattedMinutes}:${formattedSeconds}`
 }
 
+// function for opening left window when card is clicked
+
+function setupResponsiveLeftMenu() {
+  // Add event listeners to all song cards
+  const songCards = document.querySelectorAll(".card"); // Select all song cards
+  const leftMenu = document.querySelector(".left"); // Select the left menu
+  const openMenuButton = document.querySelector(".leftmenu"); // Select the button to open the menu
+
+  // Function to handle song card click
+  function handleCardClick(event) {
+    if (window.innerWidth <= 1400) { // Only for screen sizes under 1400px
+      leftMenu.style.left = "0"; // Open the left menu
+    }
+  }
+
+  // Attach the click event to each card
+  songCards.forEach((card) => {
+    card.addEventListener("click", handleCardClick);
+  });
+}
+
 // async function for fetching the songs from localDirectory by enabling the node server in spotify clone folder outside the songs folder
 
 async function getData(folder) {
@@ -288,5 +309,7 @@ rangetwo.oninput = function () {
 
 }
 };
+
+setupResponsiveLeftMenu()
 main();
 
